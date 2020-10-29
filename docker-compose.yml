@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  fdb:
+    container_name: fdb      
+    image: leosimoesp/foundationdb:6.2.27
+    volumes:
+       - ./var/fdb/conf:/etc/foundationdb
+       - ./var/fdb/logs:/var/log/foundationdb
+    ports:
+      - 4500:4500
+    environment:
+      - "FDB_PUBLIC_ADDR=127.0.0.1"
